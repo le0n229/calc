@@ -26,6 +26,7 @@ resetButton.addEventListener('click', function () {
     let dig = '0';
     (document.getElementById('digits')).innerHTML = dig
     document.getElementById('digits').style.fontSize = '60px'
+    reset = true
 })
 
 oneButton.addEventListener('click', function () {
@@ -235,6 +236,10 @@ dotButton.addEventListener('click', function () {
         reset = false
     } else {
         let dig = (document.getElementById('digits')).innerHTML
+        if(dig[dig.length-1]==='.') {
+            //alert ('Вы ввели неккоректный символ')
+            return
+        }
         dig = dig + '.';
         if (dig.length > 20) {
             alert('Работа с цифрами более 20 символов не предусмотрена системой')
