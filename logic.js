@@ -25,6 +25,7 @@ var reset = true
 resetButton.addEventListener('click', function () {
     let dig = '0';
     (document.getElementById('digits')).innerHTML = dig
+    document.getElementById('digits').style.fontSize = '60px'
 })
 
 oneButton.addEventListener('click', function () {
@@ -37,6 +38,9 @@ oneButton.addEventListener('click', function () {
         dig = dig + '1';
         (document.getElementById('digits')).innerHTML = dig
         reset = false
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
     }
 })
 
@@ -201,6 +205,7 @@ divideButton.addEventListener('click', function () {
 multiplyButton.addEventListener('click', function () {
     action = '*'
     a = (document.getElementById('digits')).innerHTML
+    
     reset = true
 })
 
