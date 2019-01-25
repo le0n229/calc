@@ -175,6 +175,10 @@ addButton.addEventListener('click', function () {
     action = '+'
     a = (document.getElementById('digits')).innerHTML
     reset = true
+    addButton.style.backgroundColor = 'red'
+    subButton.style.removeProperty('background-color')
+    multiplyButton.style.removeProperty('background-color')
+    divideButton.style.removeProperty('background-color')
 })
 
 equalButton.addEventListener('click', function () {
@@ -184,24 +188,40 @@ equalButton.addEventListener('click', function () {
     let z = (document.getElementById('digits'))
     z.innerHTML = dig
     reset = true
+    addButton.style.removeProperty('background-color')
+    multiplyButton.style.removeProperty('background-color')
+    subButton.style.removeProperty('background-color')
+    divideButton.style.removeProperty('background-color')
 })
 
 subButton.addEventListener('click', function () {
     action = '-'
     a = (document.getElementById('digits')).innerHTML
     reset = true
+    subButton.style.backgroundColor = 'red'
+    addButton.style.removeProperty('background-color')
+    multiplyButton.style.removeProperty('background-color')
+    divideButton.style.removeProperty('background-color')
 })
 
 divideButton.addEventListener('click', function () {
     action = '/'
     a = (document.getElementById('digits')).innerHTML
     reset = true
+    divideButton.style.backgroundColor = 'red'
+    addButton.style.removeProperty('background-color')
+    multiplyButton.style.removeProperty('background-color')
+    subButton.style.removeProperty('background-color')
 })
 
 multiplyButton.addEventListener('click', function () {
     action = '*'
     a = (document.getElementById('digits')).innerHTML
     reset = true
+    multiplyButton.style.backgroundColor = 'red'
+    addButton.style.removeProperty('background-color')
+    divideButton.style.removeProperty('background-color')
+    subButton.style.removeProperty('background-color')
 })
 
 function calc(arg1, operation, arg2) {
