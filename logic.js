@@ -271,19 +271,26 @@ equalButton.addEventListener('click', function () {
     z.innerHTML = dig
     reset = true
     addButton.style.removeProperty('background-color')
-
 })
 
 subButton.addEventListener('click', function () {
     action = '-'
     a = (document.getElementById('digits')).innerHTML
     reset = true
+    subButton.style.backgroundColor = 'red'
+    addButton.style.removeProperty('background-color')
+    multiplyButton.style.removeProperty('background-color')
+    divideButton.style.removeProperty('background-color')
 })
 
 divideButton.addEventListener('click', function () {
     action = '/'
     a = (document.getElementById('digits')).innerHTML
     reset = true
+    divideButton.style.backgroundColor = 'red'
+    addButton.style.removeProperty('background-color')
+    multiplyButton.style.removeProperty('background-color')
+    subButton.style.removeProperty('background-color')
 })
 
 multiplyButton.addEventListener('click', function () {
@@ -291,6 +298,10 @@ multiplyButton.addEventListener('click', function () {
     a = (document.getElementById('digits')).innerHTML
 
     reset = true
+    multiplyButton.style.backgroundColor = 'red'
+    addButton.style.removeProperty('background-color')
+    divideButton.style.removeProperty('background-color')
+    subButton.style.removeProperty('background-color')
 })
 
 function calc(arg1, operation, arg2) {
