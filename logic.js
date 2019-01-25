@@ -32,51 +32,21 @@ addButton.addEventListener('click', function () {
 equalButton.addEventListener('click', function () {
     b = (document.getElementById('digits')).innerHTML
     var dig = ''
-    dig = calc(a, action, b)
-        (document.getElementById('digits')).innerHTML = dig
+    document.getElementById('digits').innerHTML = calc(a, action, b)
     reset = true
+
 })
 
-
-function multiply(a, b) {
-    return a * b;
-}
-
-
-function divide(a, b) {
-    return a / b;
-}
-
-function add(a, b) {
-    return a + b;
-}
-
-function sub(a, b) {
-    return a - b;
-}
-
-function reset() {
-    return 0;
-}
-
-function result() {
-
-}
-
-function dot(a) {
-    return a + '.';
-}
-
-function calc(a, action, b) {
-    if (action === '-') {
-        return a - b;
-    } else if (action === '+') {
-        var c=''
-        c = a+b
-        return c;
+function calc(arg1, operation, arg2) {
+    if (operation === '-') {
+        return Number(arg1) - (arg2);
+    } else if (operation === '+') {
+        return Number(arg1) + Number(arg2)
     } else if (action === '*') {
-        return a * b;
+        return Number(arg1) * Number(arg2);
     } else if (action === '/') {
-        return a / b;
+        return Number(arg1) / Number(arg2);
     }
 }
+
+
