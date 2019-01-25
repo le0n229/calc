@@ -11,19 +11,18 @@ var zeroButton = document.getElementById('zero')
 var multiplyButton = document.getElementById('multiply')
 var subButton = document.getElementById('sub')
 var addButton = document.getElementById('add')
-var deleteButton = document.getElementById('delete')
+var resetButton = document.getElementById('delete')
 var equalButton = document.getElementById('equal')
 var dotButton = document.getElementById('dot')
+var resetButton = document.getElementById('reset')
 var action = ""
 var a = ''
 var b = ''
 var reset = true
 
-deleteButton.addEventListener('click', function () {
-    if (reset === true) {
+resetButton.addEventListener('click', function () {
         let dig = '0';
         (document.getElementById('digits')).innerHTML = dig
-    }
 })
 
 oneButton.addEventListener('click', function () {
@@ -190,7 +189,7 @@ subButton.addEventListener('click', function () {
     reset = true
 })
 
-divideButton.addEventListener('click', function () {
+resetButton.addEventListener('click', function () {
     action = '/'
     a = (document.getElementById('digits')).innerHTML
     reset = true
