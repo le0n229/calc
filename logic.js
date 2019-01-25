@@ -36,11 +36,15 @@ oneButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '1';
-        (document.getElementById('digits')).innerHTML = dig
-        reset = false
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
         if (dig.length === 10) {
             document.getElementById('digits').style.fontSize = '30px'
         }
+        (document.getElementById('digits')).innerHTML = dig
+        reset = false
     }
 })
 
@@ -52,6 +56,13 @@ twoButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '2';
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
         (document.getElementById('digits')).innerHTML = dig
         reset = false
     }
@@ -65,6 +76,13 @@ threeButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '3';
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
         (document.getElementById('digits')).innerHTML = dig
         reset = false
     }
@@ -78,6 +96,13 @@ fourButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '4';
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
         (document.getElementById('digits')).innerHTML = dig
         reset = false
     }
@@ -91,6 +116,13 @@ fiveButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '5';
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
         (document.getElementById('digits')).innerHTML = dig
         reset = false
     }
@@ -104,6 +136,13 @@ sixButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '6';
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
         (document.getElementById('digits')).innerHTML = dig
         reset = false
     }
@@ -117,6 +156,13 @@ sevenButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '7';
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
         (document.getElementById('digits')).innerHTML = dig
         reset = false
     }
@@ -130,6 +176,13 @@ eightButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '8';
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
         (document.getElementById('digits')).innerHTML = dig
         reset = false
     }
@@ -143,6 +196,13 @@ nineButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '9';
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
         (document.getElementById('digits')).innerHTML = dig
         reset = false
     }
@@ -156,6 +216,13 @@ zeroButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '0';
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
         (document.getElementById('digits')).innerHTML = dig
         reset = false
     }
@@ -169,6 +236,13 @@ dotButton.addEventListener('click', function () {
     } else {
         let dig = (document.getElementById('digits')).innerHTML
         dig = dig + '.';
+        if (dig.length > 20) {
+            alert('Работа с цифрами более 20 символов не предусмотрена системой')
+            return
+        }
+        if (dig.length === 10) {
+            document.getElementById('digits').style.fontSize = '30px'
+        }
         (document.getElementById('digits')).innerHTML = dig
         reset = false
     }
@@ -180,22 +254,23 @@ addButton.addEventListener('click', function () {
     a = (document.getElementById('digits')).innerHTML
     reset = true
     addButton.style.backgroundColor = 'red'
-    subButton.style.removeProperty('background-color')
-    multiplyButton.style.removeProperty('background-color')
-    divideButton.style.removeProperty('background-color')
 })
 
 equalButton.addEventListener('click', function () {
     b = (document.getElementById('digits')).innerHTML
     var dig = ''
     dig = calc(a, action, b)
+    if (dig.length > 20) {
+        alert('Работа с цифрами более 20 символов не предусмотрена системой')
+        return
+    }
+    if (dig.length === 10) {
+        document.getElementById('digits').style.fontSize = '30px'
+    }
     let z = (document.getElementById('digits'))
     z.innerHTML = dig
     reset = true
     addButton.style.removeProperty('background-color')
-    multiplyButton.style.removeProperty('background-color')
-    subButton.style.removeProperty('background-color')
-    divideButton.style.removeProperty('background-color')
 })
 
 subButton.addEventListener('click', function () {
@@ -221,7 +296,7 @@ divideButton.addEventListener('click', function () {
 multiplyButton.addEventListener('click', function () {
     action = '*'
     a = (document.getElementById('digits')).innerHTML
-    
+
     reset = true
     multiplyButton.style.backgroundColor = 'red'
     addButton.style.removeProperty('background-color')
