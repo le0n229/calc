@@ -21,8 +21,8 @@ var b = ''
 var reset = true
 
 resetButton.addEventListener('click', function () {
-        let dig = '0';
-        (document.getElementById('digits')).innerHTML = dig
+    let dig = '0';
+    (document.getElementById('digits')).innerHTML = dig
 })
 
 oneButton.addEventListener('click', function () {
@@ -179,7 +179,8 @@ equalButton.addEventListener('click', function () {
     b = (document.getElementById('digits')).innerHTML
     var dig = ''
     dig = calc(a, action, b)
-        (document.getElementById('digits')).innerHTML = dig
+    let z = (document.getElementById('digits'))
+    z.innerHTML = dig
     reset = true
 })
 
