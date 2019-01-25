@@ -315,12 +315,12 @@ multiplyButton.addEventListener('click', function () {
 
 function calc(arg1, operation, arg2) {
     if (operation === '-') {
-        return Number(arg1) - (arg2);
+        return (Number(arg1) - Number(arg2)).toFixed(6)
     } else if (operation === '+') {
-        return Number(arg1) + Number(arg2)
+        return (Number(arg1) + Number(arg2)).toFixed(6)
     } else if (action === '*') {
-        return Number(arg1) * Number(arg2);
+        return (Number(arg1) * Number(arg2)).toFixed(6)
     } else if (action === '/') {
-        return Number(arg1) / Number(arg2);
+        return (Number(arg1) / Number(arg2)).toFixed(6)
     }
 }
