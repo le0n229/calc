@@ -230,27 +230,22 @@ zeroButton.addEventListener('click', function () {
 })
 
 dotButton.addEventListener('click', function () {
-    if (reset === true) {
-        let dig = '.';
-        (document.getElementById('digits')).innerHTML = dig
-        reset = false
-    } else {
-        let dig = (document.getElementById('digits')).innerHTML
-        if (dig[dig.length - 1] === '.') {
-            //alert ('Вы ввели неккоректный символ')
-            return
-        }
-        dig = dig + '.';
-        if (dig.length > 20) {
-            alert('Работа с цифрами более 20 символов не предусмотрена системой')
-            return
-        }
-        if (dig.length === 10) {
-            document.getElementById('digits').style.fontSize = '30px'
-        }
-        (document.getElementById('digits')).innerHTML = dig
-        reset = false
+
+    let dig = (document.getElementById('digits')).innerHTML
+    if (dig[dig.length - 1] === '.') {
+        //alert ('Вы ввели неккоректный символ')
+        return
     }
+    dig = dig + '.';
+    if (dig.length > 20) {
+        alert('Работа с цифрами более 20 символов не предусмотрена системой')
+        return
+    }
+    if (dig.length === 10) {
+        document.getElementById('digits').style.fontSize = '30px'
+    }
+    (document.getElementById('digits')).innerHTML = dig
+    reset = false
 })
 
 
