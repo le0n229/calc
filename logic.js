@@ -271,6 +271,10 @@ equalButton.addEventListener('click', function () {
     z.innerHTML = dig
     reset = true
     addButton.style.removeProperty('background-color')
+    multiplyButton.style.removeProperty('background-color')
+    subButton.style.removeProperty('background-color')
+    divideButton.style.removeProperty('background-color')
+    
 })
 
 subButton.addEventListener('click', function () {
