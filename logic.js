@@ -236,7 +236,7 @@ dotButton.addEventListener('click', function () {
         reset = false
     } else {
         let dig = (document.getElementById('digits')).innerHTML
-        if(dig[dig.length-1]==='.') {
+        if (dig[dig.length - 1] === '.') {
             //alert ('Вы ввели неккоректный символ')
             return
         }
@@ -269,7 +269,7 @@ equalButton.addEventListener('click', function () {
         alert('Работа с цифрами более 20 символов не предусмотрена системой')
         return
     }
-    if (dig.length === 10) {
+    if (dig.length > 10) {
         document.getElementById('digits').style.fontSize = '30px'
     }
     let z = (document.getElementById('digits'))
@@ -279,7 +279,7 @@ equalButton.addEventListener('click', function () {
     multiplyButton.style.removeProperty('background-color')
     subButton.style.removeProperty('background-color')
     divideButton.style.removeProperty('background-color')
-    
+
 })
 
 subButton.addEventListener('click', function () {
@@ -314,13 +314,24 @@ multiplyButton.addEventListener('click', function () {
 })
 
 function calc(arg1, operation, arg2) {
+    let sum = 0
     if (operation === '-') {
-        return (Number(arg1) - Number(arg2)).toFixed(6)
+        sum = (Number(arg1) - Number(arg2))
     } else if (operation === '+') {
-        return (Number(arg1) + Number(arg2)).toFixed(6)
+        sum = Number(arg1) + Number(arg2)
     } else if (action === '*') {
-        return (Number(arg1) * Number(arg2)).toFixed(6)
+        sum = (Number(arg1) * Number(arg2))
     } else if (action === '/') {
-        return (Number(arg1) / Number(arg2)).toFixed(6)
+        sum = (Number(arg1) / Number(arg2))
     }
+    sum = sum.toString()
+    for (let i = 0; i < sum.length; i++) {
+        if (sum[i] === '.') {
+            sum = Number(sum)
+            sum = sum.toFixed(6)
+            sum = sum.toString()
+            return sum
+        }
+    }
+    return sum
 }
