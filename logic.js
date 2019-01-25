@@ -27,6 +27,10 @@ resetButton.addEventListener('click', function () {
     (document.getElementById('digits')).innerHTML = dig
     document.getElementById('digits').style.fontSize = '60px'
     reset = true
+    addButton.style.removeProperty('background-color')
+    multiplyButton.style.removeProperty('background-color')
+    subButton.style.removeProperty('background-color')
+    divideButton.style.removeProperty('background-color')
 })
 
 oneButton.addEventListener('click', function () {
@@ -315,6 +319,19 @@ multiplyButton.addEventListener('click', function () {
 
 function calc(arg1, operation, arg2) {
     let sum = 0
+    let pointPlace1 = 0
+    let pointPlace2 = 0
+    let pointPlace = 0
+    for (let i = 0; i < arg1.length; i++) {
+        if (arg1[i] === '.') {
+            pointPlace1 = arg1.length - i - 1
+        }
+    }
+    for (let i = 0; i < arg2.length; i++) {
+        if (arg2[i] === '.') {
+            pointPlace1 = arg2.length - i - 1
+        }
+    }
     if (operation === '-') {
         sum = (Number(arg1) - Number(arg2))
     } else if (operation === '+') {
@@ -327,8 +344,10 @@ function calc(arg1, operation, arg2) {
     sum = sum.toString()
     for (let i = 0; i < sum.length; i++) {
         if (sum[i] === '.') {
+            let pointPlace = sum.length - i
             sum = Number(sum)
-            sum = sum.toFixed(6)
+                pointPlace = (pointPlace1 > pointPlace2) ? (pointPlace1) : (pointPlace2);
+            sum = sum.toFixed(pointPlace)
             sum = sum.toString()
             return sum
         }
